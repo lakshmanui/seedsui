@@ -1,0 +1,26 @@
+<button mat-button [routerLink]="['/']" style="margin-left: 250px;">HOME</button>
+<button mat-button [matMenuTriggerFor]="compare">FIND AND COMPARE SEED</button>
+<button mat-button [matMenuTriggerFor]="companyAndDealers">SEED COMPANIES / DEALERS</button>
+<button mat-button [matMenuTriggerFor]="financeAndInsurence">CROP FINANCE / INSURANCE</button>
+<button mat-button [matMenuTriggerFor]="more">MORE</button>
+<mat-menu #compare="matMenu">
+	<button mat-menu-item [routerLink]="['ag-seed-trials']">Ag Seed Trials</button>
+	<button mat-menu-item [routerLink]="['ag-seed-finder']">Ag Seed Finder</button>
+</mat-menu>
+
+<mat-menu #companyAndDealers="matMenu">
+	<button mat-menu-item [routerLink]="['ag-seed-quote']">Ag Seed Quote</button>
+	<button mat-menu-item [routerLink]="['seed-dealers-and-reps']">Seed Dealers and Reps</button>
+	<button mat-menu-item [routerLink]="['seed-companies-and-reps']">Seed Companies and Reps</button>
+</mat-menu>
+
+<mat-menu #financeAndInsurence="matMenu">
+	<button mat-menu-item [routerLink]="['farm-and-crop-loans']">Farm and Crop Loans</button>
+	<button mat-menu-item [routerLink]="['crop-insurance']">Crop Insurance</button>
+</mat-menu>
+
+<mat-menu #more="matMenu">
+	<button mat-menu-item [routerLink]="['ag-associations']">AG ASSOCIATIONS</button>
+	<button mat-menu-item [routerLink]="['ag-news']">AG NEWS</button>
+	<button mat-menu-item [routerLink]="['ag-farm-blog']">AG FARM BLOG</button>
+</mat-menu>
