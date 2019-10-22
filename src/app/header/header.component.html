@@ -3,6 +3,9 @@
 <button mat-button [matMenuTriggerFor]="companyAndDealers">SEED COMPANIES / DEALERS</button>
 <button mat-button [matMenuTriggerFor]="financeAndInsurence">CROP FINANCE / INSURANCE</button>
 <button mat-button [matMenuTriggerFor]="more">MORE</button>
+<button mat-button [matMenuTriggerFor]="login">LOGIN/REGISTER</button>
+
+
 <mat-menu #compare="matMenu">
 	<button mat-menu-item [routerLink]="['ag-seed-trials']">Ag Seed Trials</button>
 	<button mat-menu-item [routerLink]="['ag-seed-finder']">Ag Seed Finder</button>
@@ -23,4 +26,9 @@
 	<button mat-menu-item [routerLink]="['ag-associations']">AG ASSOCIATIONS</button>
 	<button mat-menu-item [routerLink]="['ag-news']">AG NEWS</button>
 	<button mat-menu-item [routerLink]="['ag-farm-blog']">AG FARM BLOG</button>
+</mat-menu>
+
+<mat-menu #login="matMenu">
+	<button mat-menu-item [routerLink]="['login']">LOGIN</button>
+	<button mat-menu-item [routerLink]="['register']">REGISTER</button>
 </mat-menu>
