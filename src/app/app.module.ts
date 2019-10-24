@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
@@ -92,6 +93,7 @@ const routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
