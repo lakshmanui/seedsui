@@ -1,6 +1,13 @@
 <div class="center">
   <span>
         <p>Ag Seed Finder Search Page</p>
-         <br> Here is where the search tool would be placed
+        <br> Farmers, Start here to get connected with local seed professionals
+
+        <form (ngSubmit)="onSubmit()" #searchDealerForm="ngForm">
+          <input type="text" id="zipId" name="zip" [(ngModel)]="searchDealerRequest.zipCode"  #zip="ngModel"/>
+
+        </form>
+
+
     </span>
 </div>
