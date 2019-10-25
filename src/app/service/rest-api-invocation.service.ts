@@ -13,14 +13,14 @@ import {StorageService} from './storage.service'
 export class RestAPIInvocationService {
   userDetails: any;
   // Base url TODO Later move this to environemnt
-  baseurl = 'http://localhost:3000';
+  baseurl = 'http://localhost:8090/seedsystem/';
 
   constructor(private httpClient: HttpClient,
     private globalService: GlobalDataService,
     private storageService: StorageService) { }
 
 
-  private getRequest(endPoint: string , showLoader: boolean): Observable<ResponseEntity> {
+  public getRequest(endPoint: string): Observable<ResponseEntity> {
     const strBaseUrl: string = this.baseurl;
 
     this.userDetails = this.globalService.userDetails == null ?
@@ -43,6 +43,48 @@ export class RestAPIInvocationService {
       );
   }
 
+  public postRequest(authRequired:boolean, endPoint: string, requestObject: any): Observable<ResponseEntity> {
+    const strBaseUrl: string = this.baseurl;
+    if(authRequired){
+    this.userDetails = this.globalService.userDetails == null ?
+    this.storageService.read('userDetails')['token'] : this.globalService.userDetails.token;
+    return this.httpClient.post<any>(strBaseUrl + endPoint,requestObject, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+         'Authorization': this.userDetails
+      })
+    })
+      .pipe(
+        tap(
+          data => {
+            console.log(data);
+          }
+        ),
+        catchError((error: any) => {
+          return throwError(error);
+          }
+        )
+      );
+        } else{
+          return this.httpClient.post<any>(strBaseUrl + endPoint,requestObject, {
+            headers: new HttpHeaders({
+              'Content-Type': 'application/json',
+            })
+          })
+            .pipe(
+              tap(
+                data => {
+                  console.log(data);
+                }
+              ),
+              catchError((error: any) => {
+                return throwError(error);
+                }
+              )
+            );
+      
+        }
+  }
 
 
   // Error handling

@@ -8,7 +8,7 @@ import { FormsModule }   from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
-         MatFormFieldModule, MatRadioModule } from '@angular/material';
+         MatFormFieldModule, MatRadioModule,MatInputModule,MatCheckboxModule } from '@angular/material';
 import { from } from 'rxjs';
 import {  MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -92,7 +92,9 @@ const routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,      
+    FormsModule,
+    MatInputModule,
+    MatCheckboxModule,      
     MatButtonModule,
     MatMenuModule,
     HttpClientModule,

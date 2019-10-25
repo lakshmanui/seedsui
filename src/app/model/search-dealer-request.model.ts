@@ -1,5 +1,6 @@
 export class SearchDealerRequest {
-    zipCode: String;
+    state: String;
+    county:String;
     crops: String[];
   }
   

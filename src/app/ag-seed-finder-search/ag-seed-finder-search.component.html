@@ -2,9 +2,32 @@
   <span>
         <p>Ag Seed Finder Search Page</p>
         <br> Farmers, Start here to get connected with local seed professionals
-
+        <br>
         <form (ngSubmit)="onSubmit()" #searchDealerForm="ngForm">
-          <input type="text" id="zipId" name="zip" [(ngModel)]="searchDealerRequest.zipCode"  #zip="ngModel"/>
+          <table class="table" align="center">
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="County" name="county" id="county" [(ngModel)]="searchDealerRequestForm.county">
+                  </mat-form-field>
+            </tr>
+            <br>  
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="State" name="state" id="state" [(ngModel)]="searchDealerRequestForm.state">
+                  </mat-form-field>
+            </tr>
+            <br>
+            <tr>
+                <mat-checkbox  name="cropAll" [(ngModel)]="searchDealerRequestForm.cropAll">ALL</mat-checkbox>
+                <mat-checkbox  name="cropCorn" [(ngModel)]="searchDealerRequestForm.cropCorn">Corn</mat-checkbox>              
+                <mat-checkbox  name="cropWheat" [(ngModel)]="searchDealerRequestForm.cropWheat">Wheat</mat-checkbox>              
+                <mat-checkbox  name="cropCotton" [(ngModel)]="searchDealerRequestForm.cropCotton">Cotton</mat-checkbox>              
+                <mat-checkbox  name="cropSoyaBean" [(ngModel)]="searchDealerRequestForm.cropSoyaBean">Soya Bean</mat-checkbox>              
+            </tr>
+            <tr align="center"><td colspan="2">
+              <button type="submit" class="btn btn-default">Submit</button>
+              </td><br></tr>
+          </table>
 
         </form>
 
