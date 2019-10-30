@@ -1,51 +1,99 @@
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+<mat-grid-list cols="4" rowHeight="4:1">
+    <mat-grid-tile [colspan]=4>
+        <mat-label><h3>Personal Details</h3> </mat-label>
+    </mat-grid-tile>
+    
+  <mat-grid-tile >
+      <mat-label>First Name</mat-label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-form-field >
+          <input matInput placeholder="First Name" name="firstName"  formControlName="firstName">
+        </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-label>Street</mat-label>
+  </mat-grid-tile>         
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="Street" name="street"  formControlName="street">
+      </mat-form-field>
+  </mat-grid-tile>      
   
-  <mat-label>First Name</mat-label>
-  <mat-form-field >
-    <input matInput placeholder="First Name" name="firstName"  formControlName="firstName">
-  </mat-form-field>
-  <mat-label>Last Name</mat-label>
-  <mat-form-field >
-    <input matInput placeholder="Last Name" name="lastName"  formControlName="lastName">
-  </mat-form-field>
-  <mat-label>E Mail</mat-label>
-  <mat-form-field >
-    <input matInput placeholder="E Mail" name="email"  formControlName="email">
-  </mat-form-field>
-  <mat-label>Password</mat-label>
-  <mat-form-field >
-    <input matInput placeholder="Password" name="password" type="password"  formControlName="password">
-  </mat-form-field>
-  <mat-label>Confirm Password</mat-label>
+  <mat-grid-tile>  
+      <mat-label>Last Name</mat-label>
+  </mat-grid-tile>      
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="Last Name" name="lastName"  formControlName="lastName">
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-label>City</mat-label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="City" name="city"   formControlName="city">
+      </mat-form-field>
+  </mat-grid-tile>
 
-  <mat-form-field >
-    <input matInput placeholder="Confirm Password" name="confirmPassword" type="password"  formControlName="confirmPassword">
-  </mat-form-field>
-  <br>
+  <mat-grid-tile>  
+      <mat-label>E Mail</mat-label>
+  </mat-grid-tile>      
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="E Mail" name="email"  formControlName="email">
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-label>State</mat-label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="State" name="state"  formControlName="state">
+      </mat-form-field>
+  </mat-grid-tile>
 
+  <mat-grid-tile>  
+      <mat-label>Password</mat-label>
+  </mat-grid-tile>      
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="Password" name="password" type="password" formControlName="password">
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-label>Zip</mat-label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="Zip" name="zip"  formControlName="zip">
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-label>Confirm Password</mat-label>
+  </mat-grid-tile>
 
-        <div formGroupName="address">
-          <h3>Address</h3>
-          <mat-label>Street</mat-label>
-          <mat-form-field >
-            <input matInput placeholder="Street" name="street"  formControlName="street">
-          </mat-form-field>
-          <mat-label>City</mat-label>
-          <mat-form-field >
-            <input matInput placeholder="City" name="city"  formControlName="city">
-          </mat-form-field>
-          <mat-label>State</mat-label>
-          <mat-form-field >
-            <input matInput placeholder="State" name="state"  formControlName="state">
-          </mat-form-field>
-          <mat-label>Zip</mat-label>
-          <mat-form-field >
-            <input matInput placeholder="Zip" name="zip"  formControlName="zip">
-          </mat-form-field>
-        </div>
-      
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="Confirm Password" name="confirmPassword" type="password" formControlName="confirmPassword">
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-label>Contact Number</mat-label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-form-field >
+        <input matInput placeholder="contactNumber" name="contactNumber"  formControlName="contactNumber">
+      </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]=4>
+      <mat-label><h3>Payment Details</h3> </mat-label>
+  </mat-grid-tile>
+
+</mat-grid-list>
       </form>
-      
-      <hr>
       
       

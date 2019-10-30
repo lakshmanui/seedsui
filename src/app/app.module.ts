@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material';
 import { MatTableModule,MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
          MatFormFieldModule, MatRadioModule,MatInputModule,MatCheckboxModule } from '@angular/material';
 import {  MatDatepickerModule, MatNativeDateModule } from '@angular/material';
@@ -105,6 +106,7 @@ const routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule,
     MatCardModule,
     MatFormFieldModule,
     MatGridListModule,
