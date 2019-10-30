@@ -4,12 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
+import { MatTableModule,MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
          MatFormFieldModule, MatRadioModule,MatInputModule,MatCheckboxModule } from '@angular/material';
-import { from } from 'rxjs';
 import {  MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { AppComponent } from './app.component';
@@ -28,6 +27,7 @@ import { AGFarmBlogComponent } from './ag-farm-blog/ag-farm-blog.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AgSeedFinderSearchComponent } from './ag-seed-finder-search/ag-seed-finder-search.component';
+import { ConfirmationDialog } from './confirmation-dialog/confirmationdialog';
 
 const routes = [
   {
@@ -93,6 +93,7 @@ const routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatCheckboxModule,      
     MatButtonModule,
@@ -100,6 +101,7 @@ const routes = [
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    MatTableModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
@@ -118,7 +120,8 @@ const routes = [
                  SeedDealersAndRepsComponent, SeedCompaniesAndRepsComponent,
                  CropInsuranceComponent, FarmAndCropLoansComponent,
                  AGAssociationsComponent, AGNewsComponent, AGFarmBlogComponent, LoginComponent, RegisterComponent,
-                 AgSeedFinderSearchComponent],
+                 AgSeedFinderSearchComponent,ConfirmationDialog],
+  entryComponents: [ConfirmationDialog],                 
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })

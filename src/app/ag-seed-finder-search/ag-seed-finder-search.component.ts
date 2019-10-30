@@ -1,30 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import {MatDialog,MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog,MatDialogConfig, MatDialogRef} from '@angular/material';
 import {RestAPIInvocationService} from '../service/rest-api-invocation.service'
 import {SearchDealerRequestForm} from '../model/search-dealer-request-form.model'
 import {SearchDealerRequest} from '../model/search-dealer-request.model';
-
+import { DealerResponse } from '../model/dealer-response.model';
+import {ConfirmationDialog} from '../confirmation-dialog/confirmationdialog';
 
 @Component({
   selector: 'app-ag-seed-finder-search',
   templateUrl: './ag-seed-finder-search.component.html',
   styleUrls: ['./ag-seed-finder-search.component.css']
 })
-export class AgSeedFinderSearchComponent implements OnInit {
+export class AgSeedFinderSearchComponent {
   
   private searchDealerRequestForm : SearchDealerRequestForm;
   private searchDealerRequest : SearchDealerRequest;
+  private dealerResult : DealerResponse[];
+  private displayedColumns: String[] = ['dealerTitle', 'contactPerson', 'contactNumber'];
   
   constructor(private restApiInvocationService : RestAPIInvocationService, public  dialog: MatDialog) {
     this.searchDealerRequestForm = new SearchDealerRequestForm();
-
    }
 
-
-  ngOnInit() {
-    
-  }
 
   onSubmit() {
     console.log("Received "+this.searchDealerRequestForm);
@@ -49,8 +47,12 @@ export class AgSeedFinderSearchComponent implements OnInit {
       this.searchDealerRequest.crops.push('SoyaBean');
     }
 
-    this.restApiInvocationService.postRequest(false, "/search/dealer",this.searchDealerRequest);
-    
+    this.restApiInvocationService.postRequest(false, "/search/dealer",this.searchDealerRequest)
+    .subscribe( response => this.dealerResult=response.data);
+  }
+
+  onGetQuote(){
+    this.dialog.open(ConfirmationDialog);
   }
 
 }

@@ -1,5 +1,5 @@
 /* Add application styles & imports to this file! */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body { 
   font-family: Roboto, Arial, sans-serif;
@@ -15,7 +15,7 @@ body {
 .welcome {
   padding-top: 100px;
   font-weight: lighter;
-  font-size: 16px ;
+  font-size: 32px ;
   color: rgb(89,89,89);
 }
 .agseed {
@@ -62,4 +62,14 @@ body {
   background-color:rgb(208, 94, 40);
   color: white;
   text-align: center;
+}
+.checkbox-margin {
+  margin: 0 10px;
+}
+
+.checkbox-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
 }

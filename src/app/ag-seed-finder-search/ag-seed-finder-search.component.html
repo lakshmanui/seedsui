@@ -1,36 +1,63 @@
 <div class="center">
   <span>
-        <p>Ag Seed Finder Search Page</p>
-        <br> Farmers, Start here to get connected with local seed professionals
+        <h2>Ag Seed Finder Search Page</h2>
+        <h3> Farmers, Start here to get connected with local seed professionals</h3>
         <br>
+        
         <form (ngSubmit)="onSubmit()" #searchDealerForm="ngForm">
           <table class="table" align="center">
             <tr>
-                <mat-form-field class="example-full-width">
+                <mat-form-field >
                     <input matInput placeholder="County" name="county" id="county" [(ngModel)]="searchDealerRequestForm.county">
                   </mat-form-field>
             </tr>
             <br>  
             <tr>
-                <mat-form-field class="example-full-width">
+                <mat-form-field >
                     <input matInput placeholder="State" name="state" id="state" [(ngModel)]="searchDealerRequestForm.state">
                   </mat-form-field>
             </tr>
             <br>
-            <tr>
-                <mat-checkbox  name="cropAll" [(ngModel)]="searchDealerRequestForm.cropAll">ALL</mat-checkbox>
-                <mat-checkbox  name="cropCorn" [(ngModel)]="searchDealerRequestForm.cropCorn">Corn</mat-checkbox>              
-                <mat-checkbox  name="cropWheat" [(ngModel)]="searchDealerRequestForm.cropWheat">Wheat</mat-checkbox>              
-                <mat-checkbox  name="cropCotton" [(ngModel)]="searchDealerRequestForm.cropCotton">Cotton</mat-checkbox>              
-                <mat-checkbox  name="cropSoyaBean" [(ngModel)]="searchDealerRequestForm.cropSoyaBean">Soya Bean</mat-checkbox>              
-            </tr>
+            <tr><td colspan="2">
+                <section style="align-items: center;">
+                <mat-checkbox class='checkbox-margin'  name="cropAll" [(ngModel)]="searchDealerRequestForm.cropAll">ALL</mat-checkbox>
+                <mat-checkbox class='checkbox-margin' name="cropCorn" [(ngModel)]="searchDealerRequestForm.cropCorn">Corn</mat-checkbox>              
+                <mat-checkbox class='checkbox-margin' name="cropWheat" [(ngModel)]="searchDealerRequestForm.cropWheat">Wheat</mat-checkbox>              
+                <mat-checkbox class='checkbox-margin' name="cropCotton" [(ngModel)]="searchDealerRequestForm.cropCotton">Cotton</mat-checkbox>              
+                <mat-checkbox class='checkbox-margin' name="cropSoyaBean" [(ngModel)]="searchDealerRequestForm.cropSoyaBean">Soya Bean</mat-checkbox>              
+                </section>
+           </td> </tr>
+           <br>
             <tr align="center"><td colspan="2">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" mat-flat-button >Search</button>
               </td><br></tr>
           </table>
-
         </form>
-
-
     </span>
 </div>
+
+<div *ngIf="dealerResult && dealerResult.length > 0" >
+  
+<table mat-table [dataSource]="dealerResult" class='mat-elevation-z8' style='align-items: center;width: 100%'>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Dealer Name Column -->
+    <mat-text-column name="dealerTitle"></mat-text-column>
+
+    <!-- Dealer Contact Number Column -->
+    <mat-text-column name="contactPerson"></mat-text-column>  
+    <!-- Crop Column -->
+    <mat-text-column name="contactNumber"></mat-text-column>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>
+  <div style="align-items: center;">
+    <button type="button" mat-flat-button (click)="onGetQuote()">Get Quote</button>
+  </div>
+</div>  
+  
+
+
