@@ -17,12 +17,19 @@ export class RegisterComponent {
   registrationForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    })});
+    email:[''],
+    street: [''],
+    city: [''],
+    state: [''],
+    zip: [''],
+    password: [''],
+    contactNumber: [''],
+    confirmPassword: [''],
+    creditCardNumber: [''],
+    expiryDate:[''],
+    cvv:[''],
+    trialUser:['']
+    });
   
   
 }

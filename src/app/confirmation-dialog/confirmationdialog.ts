@@ -14,7 +14,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
        }
   
     onRegister(): void {
-      this.dialogRef.close();
+      //this.dialogRef.close();
       this.router.navigate(['/register']);
     }
   

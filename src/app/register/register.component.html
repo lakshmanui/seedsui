@@ -89,11 +89,48 @@
       </mat-form-field>
   </mat-grid-tile>
 
-  <mat-grid-tile [colspan]=4>
-      <mat-label><h3>Payment Details</h3> </mat-label>
-  </mat-grid-tile>
 
 </mat-grid-list>
-      </form>
+<mat-grid-list cols="2" rowHeight="8:1">
+  <mat-grid-tile [colspan]=2>
+      <mat-label><h3>Payment Details</h3> </mat-label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-label>Credit Card Number</mat-label>
+</mat-grid-tile>
+<mat-grid-tile>
+    <mat-form-field >
+      <input matInput placeholder="credit card number" name="creditCardNumber"  formControlName="creditCardNumber">
+    </mat-form-field>
+</mat-grid-tile>
+<mat-grid-tile>
+  <mat-label>Expiry Date</mat-label>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <mat-form-field >
+    <input matInput placeholder="Expiry Date" type="date" name="expiryDate"  formControlName="expiryDate">
+  </mat-form-field>
+</mat-grid-tile>
+<mat-grid-tile>
+  <mat-label>CVV</mat-label>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <mat-form-field >
+    <input matInput placeholder="cvv" name="cvv"  formControlName="cvv">
+  </mat-form-field>
+</mat-grid-tile>
+
+<mat-grid-tile>
+    <mat-checkbox class='checkbox-margin'  formControlName="trialUser" name="trialUser">Trial User</mat-checkbox>
+</mat-grid-tile>
+
+
+<mat-grid-tile [colspan]='2'>
+  <button type="submit" mat-flat-button>Register</button>
+</mat-grid-tile>
+</mat-grid-list>
+</form>
       
       
