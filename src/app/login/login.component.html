@@ -1,20 +1,29 @@
-<!--<mat-toolbar>-->
-<!--  <span>LOGIN</span>-->
-<!--</mat-toolbar>-->
-<!--<mat-card class="my-card">-->
-<!--  <mat-card-content>-->
-<!--    <form class="my-form">-->
-<!--      <mat-form-field class="full-width">-->
-<!--        <mat-label>Email</mat-label>-->
-<!--        <input  matInput  placeholder="Email" name="email">-->
-<!--      </mat-form-field>-->
-<!--      <mat-form-field class="full-width">-->
-<!--        <mat-label>Password</mat-label>-->
-<!--        <input  matInput  placeholder="Password" name="password">-->
-<!--      </mat-form-field>-->
-<!--    </form>-->
-<!--  </mat-card-content>-->
-<!--  <mat-card-actions>-->
-<!--    <button mat-raised-button (click)="login()" color="primary">LOGIN</button>-->
-<!--  </mat-card-actions>-->
-<!--</mat-card>-->
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<mat-grid-list cols="2" rowHeight="8:1" >
+        <mat-grid-tile [colspan]='2'>
+            <mat-label><h3>Sign In</h3> </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-label>Email Id</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <mat-form-field >
+            <input matInput placeholder="emailId" type="email" name="emailId"  formControlName="emailId">
+          </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Password</mat-label>
+      </mat-grid-tile>
+      
+      <mat-grid-tile>
+        <mat-form-field >
+          <input matInput placeholder="password" type="password" name="password"  formControlName="password">
+        </mat-form-field>
+      </mat-grid-tile>
+      
+      <mat-grid-tile [colspan]='2'>
+        <button type="submit" mat-flat-button>Sign In</button>
+      </mat-grid-tile>
+      </mat-grid-list>
+      </form>
+      
