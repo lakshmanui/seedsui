@@ -36,6 +36,10 @@ const routes = [
     component: HomeComponent
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'ag-seed-trials',
     component: AGSeedTrialsComponent
   },

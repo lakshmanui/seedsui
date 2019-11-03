@@ -25,7 +25,7 @@ export class AgSeedFinderSearchComponent {
 
 
   onSubmit() {
-    console.log("Received "+this.searchDealerRequestForm);
+    
     this.searchDealerRequest = new SearchDealerRequest();
     this.searchDealerRequest.county=this.searchDealerRequestForm.county;
     this.searchDealerRequest.state=this.searchDealerRequestForm.state;
