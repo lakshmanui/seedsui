@@ -5,8 +5,8 @@ export class RegistrationRequest {
   password : String;
   confirmedPassword : String;
   city : String;
-  state : String:
-  contactNumber: String
+  state : String;
+  contactNumber: String;
   address: String;
   zip: String;
   creditCardNumber: String;
