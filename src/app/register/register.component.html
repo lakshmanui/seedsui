@@ -1,4 +1,4 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
 <mat-grid-list cols="4" rowHeight="4:1">
     <mat-grid-tile [colspan]=4>
         <mat-label><h3>Personal Details</h3> </mat-label>
