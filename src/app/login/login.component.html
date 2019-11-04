@@ -10,7 +10,7 @@
           <mat-form-field >
             <input matInput placeholder="emailId" type="email" name="emailId"  formControlName="emailId" required>
               <mat-error class="error-msg"
-                   *ngIf="loginForm.controls['emailId'].hasError('required') && (loginForm.touched || loginForm.dirty)">
+                   *ngIf="loginForm.controls['emailId'].hasError('required')">
                 Email Id is required
               </mat-error>
           </mat-form-field>
@@ -22,9 +22,10 @@
       <mat-grid-tile>
         <mat-form-field >
           <input matInput placeholder="password" type="password" name="password"  formControlName="password" required>
-        
+      
+          
         <mat-error class="error-msg"
-        *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.touched || loginForm.dirty)">
+        *ngIf="loginForm.controls['password'].hasError('required')">
           Password is required
         </mat-error>
       </mat-form-field>
