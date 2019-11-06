@@ -15,6 +15,7 @@ export class LoginComponent {
 
   loginRequest : LoginRequest;
   loginResponse : LoginResponse;
+  showErrorMessage : Boolean;
   
   constructor(private router: Router , private restApiInvocationService : RestAPIInvocationService, private fb: FormBuilder) { }
 
@@ -33,9 +34,19 @@ export class LoginComponent {
       this.loginRequest.password=data.value.password;
 
       this.restApiInvocationService.postRequest(false, "/user/login",this.loginRequest)
-      .subscribe( response => {this.loginResponse=response.data,console.log(this.loginResponse),
-        this.loginResponse.authenticated ? this.router.navigate(['/home']) :
-        this.router.navigate(['/login']);});
+      .subscribe( response => {
+        this.loginResponse=response.data;
+        console.log(this.loginResponse);
+
+        if(!response.data.authenticated){
+          this.showErrorMessage=true;
+        }
+
+        this.loginResponse.authenticated ? 
+          this.router.navigate(['/home']) : this.router.navigate(['/login']);
+      
+      
+      });
 
     }
 }

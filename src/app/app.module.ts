@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AgSeedFinderSearchComponent } from './ag-seed-finder-search/ag-seed-finder-search.component';
 import { ConfirmationDialog } from './confirmation-dialog/confirmationdialog';
+import { ConfirmEqualValidatorDirective } from './custom-directive/confirm-equal-validator.directive';
 
 const routes = [
   {
@@ -126,7 +127,7 @@ const routes = [
                  SeedDealersAndRepsComponent, SeedCompaniesAndRepsComponent,
                  CropInsuranceComponent, FarmAndCropLoansComponent,
                  AGAssociationsComponent, AGNewsComponent, AGFarmBlogComponent, LoginComponent, RegisterComponent,
-                 AgSeedFinderSearchComponent,ConfirmationDialog],
+                 AgSeedFinderSearchComponent,ConfirmationDialog,ConfirmEqualValidatorDirective],
   entryComponents: [ConfirmationDialog],                 
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]

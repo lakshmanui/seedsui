@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { RegistrationRequest } from '../model/registration-request.model.';
 import {RestAPIInvocationService} from '../service/rest-api-invocation.service'
@@ -56,5 +56,6 @@ export class RegisterComponent {
       .subscribe( response => this.registrationResponse=response.data);
       
     }
+
   
 }

@@ -8,6 +8,7 @@
       </mat-grid-tile>
       <mat-grid-tile>
           <mat-form-field >
+            
             <input matInput placeholder="emailId" type="email" name="emailId"  formControlName="emailId" required>
               <mat-error class="error-msg"
                    *ngIf="loginForm.controls['emailId'].hasError('required')">
@@ -22,8 +23,6 @@
       <mat-grid-tile>
         <mat-form-field >
           <input matInput placeholder="password" type="password" name="password"  formControlName="password" required>
-      
-          
         <mat-error class="error-msg"
         *ngIf="loginForm.controls['password'].hasError('required')">
           Password is required
@@ -33,6 +32,11 @@
       
       <mat-grid-tile [colspan]='2'>
         <button type="submit" mat-flat-button>Sign In</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]='2'>
+      <div *ngIf="showErrorMessage" style="align-items: center;">
+          <H3>Please Enter Correct UserId and (or) Password </H3>
+      </div>
       </mat-grid-tile>
       </mat-grid-list>
       </form>
